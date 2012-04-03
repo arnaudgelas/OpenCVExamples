@@ -34,8 +34,8 @@ int main( int argc, char* argv[] )
   cvReleaseImage( &imageHSV );
 
   cvSaveImage( "hue.png", imageH );
-  cvSaveImage( "saturation.png", imageH );
-  cvSaveImage( "value.png", imageH );
+  cvSaveImage( "saturation.png", imageS );
+  cvSaveImage( "value.png", imageV );
 
   cvReleaseImage( &imageH );
   cvReleaseImage( &imageS );

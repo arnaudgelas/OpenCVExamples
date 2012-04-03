@@ -22,7 +22,24 @@ int main( int argc, char* argv[] )
   std::cout << img->width << " x " << img->height << std::endl;
 
   CvSize size = cvSize( img->width, img->height );
-//  std::cout << size << std::endl;
+
+  IplImage* imageHSV = cvCreateImage( size, img->depth, 3 );
+  cvCvtColor( img, imageHSV, CV_BGR2HSV );
+
+  IplImage* imageH = cvCreateImage( size, img->depth, 1 );
+  IplImage* imageS = cvCreateImage( size, img->depth, 1 );
+  IplImage* imageV = cvCreateImage( size, img->depth, 1 );
+
+  cvSplit( imageHSV, imageH, imageS, imageV, NULL );
+  cvReleaseImage( &imageHSV );
+
+  cvSaveImage( "hue.png", imageH );
+  cvSaveImage( "saturation.png", imageH );
+  cvSaveImage( "value.png", imageH );
+
+  cvReleaseImage( &imageH );
+  cvReleaseImage( &imageS );
+  cvReleaseImage( &imageV );
 
   cvReleaseImage( &img );
 
