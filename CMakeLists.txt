@@ -9,3 +9,4 @@ set( CMAKE_RUNTIME_OUTPUT_DIRECTORY
 )
 
 add_subdirectory( GetImageSize )
+add_subdirectory( ConvertRGBImageToHSVImages )
