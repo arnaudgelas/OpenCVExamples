@@ -1,0 +1,22 @@
+#include <cstdlib>
+#include <iostream>
+
+#include "cv.h"
+#include "highgui.h"
+
+int main( int argc, char* argv[] )
+{
+  IplImage* img = cvLoadImage( argv[1] );
+  if( !img )
+    {
+    std::cerr << "Could not load image file: " << argv[1] << std::endl;
+    return EXIT_FAILURE;
+    }
+
+  std::cout << img->width << " x " << img->height << std::endl;
+
+  CvSize size = cvSize( img->width, img->height );
+//  std::cout << size << std::endl;
+
+  return EXIT_SUCCESS;
+}
