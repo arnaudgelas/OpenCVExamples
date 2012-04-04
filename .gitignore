@@ -3,3 +3,6 @@ Build/
 BUILD/
 CMakeLists.txt.user*
 *~
+*.bak
+*.orig
+*.swp
