@@ -26,7 +26,7 @@ int main( int argc, char* argv[] )
   CvScalar color;
   color.val[0] = 255.;
 
-  int thickness = atoi( argv[2] );
+  int thickness = atoi( argv[2] ); // if thickness < 0, the circle is filled
 
   cvCircle( image, center, radius, color, thickness );
 
