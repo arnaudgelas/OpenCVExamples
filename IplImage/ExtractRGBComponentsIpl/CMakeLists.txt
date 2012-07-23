@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( ExtractRGBComponentsIpl ExtractRGBComponentsIpl.cpp )
+add_executable( ExtractRGBComponentsIpl ExtractRGBComponents.cpp )
 target_link_libraries( ExtractRGBComponentsIpl ${OpenCV_LIBS} )
