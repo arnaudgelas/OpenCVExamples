@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( BinaryThresholdIpl BinaryThreshold.cpp )
+add_executable( BinaryThresholdIpl BinaryThresholdIpl.cpp )
 target_link_libraries( BinaryThresholdIpl ${OpenCV_LIBS} )

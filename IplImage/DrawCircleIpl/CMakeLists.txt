@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( DrawCircleIpl DrawCircle.cpp )
+add_executable( DrawCircleIpl DrawCircleIpl.cpp )
 target_link_libraries( DrawCircleIpl ${OpenCV_LIBS} )

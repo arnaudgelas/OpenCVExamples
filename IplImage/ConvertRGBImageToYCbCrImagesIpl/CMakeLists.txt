@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( ConvertRGBImageToYCbCrImagesIpl ConvertRGBImageToYCbCrImages.cpp )
+add_executable( ConvertRGBImageToYCbCrImagesIpl ConvertRGBImageToYCbCrImagesIpl.cpp )
 target_link_libraries( ConvertRGBImageToYCbCrImagesIpl ${OpenCV_LIBS} )

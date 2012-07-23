@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( GetImageSizeIpl GetImageSize.cpp )
+add_executable( GetImageSizeIpl GetImageSizeIpl.cpp )
 target_link_libraries( GetImageSizeIpl ${OpenCV_LIBS} )

@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( SURFFeatureDetectionIpl SURFFeatureDetection.cpp )
+add_executable( SURFFeatureDetectionIpl SURFFeatureDetectionIpl.cpp )
 target_link_libraries( SURFFeatureDetectionIpl ${OpenCV_LIBS} )

@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( MSERFeatureDetectionIpl MSERFeatureDetection.cpp )
+add_executable( MSERFeatureDetectionIpl MSERFeatureDetectionIpl.cpp )
 target_link_libraries( MSERFeatureDetectionIpl ${OpenCV_LIBS} )

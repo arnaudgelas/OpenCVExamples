@@ -6,5 +6,5 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( HoughCirclesIpl HoughCircles.cpp )
+add_executable( HoughCirclesIpl HoughCirclesIpl.cpp )
 target_link_libraries( HoughCirclesIpl ${OpenCV_LIBS} )
