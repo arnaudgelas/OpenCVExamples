@@ -8,16 +8,7 @@ set( CMAKE_RUNTIME_OUTPUT_DIRECTORY
   ${OpenCVExamples_BINARY_DIR}/bin
 )
 
-add_subdirectory( GetImageSize )
-add_subdirectory( DisplayAnImage )
-add_subdirectory( ConvertRGBImageToHSVImages )
-add_subdirectory( ConvertRGBImageToYCbCrImages )
-add_subdirectory( KMeansOnRGBImage )
-add_subdirectory( DrawCircle )
-add_subdirectory( SURFFeatureDetection )
-add_subdirectory( MSERFeatureDetection )
-add_subdirectory( STARFeatureDetection )
-add_subdirectory( HoughCircles )
-add_subdirectory( HoughLines )
-add_subdirectory( GoodFeaturesToTrack )
+add_subdirectory( IplImage )
+add_subdirectory( cvMat )
+
 # add_subdirectory( NeuralNetwork )
