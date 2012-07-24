@@ -28,8 +28,8 @@ int main(int argc, char **argv)
   // (3)run k-means clustering algorithm to segment pixels in RGB color space
   cv::Mat_<int> clusters(points.size(), CV_32SC1);
   cv::Mat centers;
-  kmeans(points, NumberOfClusters, clusters,
-   cvTermCriteria(CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 10, 1.0), 1, cv::KMEANS_PP_CENTERS, &centers);
+  cv::kmeans(points, NumberOfClusters, clusters,
+   cv::TermCriteria(CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 10, 1.0), 1, cv::KMEANS_PP_CENTERS, centers);
 
   // (4)make a each centroid represent all pixels in the cluster
   cv::Mat dst_img(src_img.size(), src_img.type());
