@@ -74,7 +74,7 @@ int main( int argc, char* argv[] )
     }
 
   cv::namedWindow( argv[1], CV_WINDOW_NORMAL );
-  cv::imshow( argv[1], image );
+  cvShowImage( argv[1], image );
 
   cvReleaseImage( &image );
   cv::waitKey(0);
