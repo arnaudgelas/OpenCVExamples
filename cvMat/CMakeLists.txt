@@ -7,3 +7,5 @@ add_subdirectory( DisplayHistogram )
 add_subdirectory( DisplayRGBHistogram )
 add_subdirectory( ConvertRGBImageToHSVImages )
 add_subdirectory( ConvertRGBImageToYCbCrImages )
+add_subdirectory( GoodFeaturesToTrack )
+
