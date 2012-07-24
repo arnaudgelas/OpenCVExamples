@@ -11,12 +11,7 @@ int main( int argc, char* argv[] )
     return EXIT_FAILURE;
     }
 
-  IplImage* image = cvLoadImage( argv[1], CV_LOAD_IMAGE_GRAYSCALE );
-  if( !image )
-    {
-    std::cerr << "Could not load image file: " << argv[1] << std::endl;
-    return EXIT_FAILURE;
-    }
+  cv::Mat image = cv::imread( argv[1],0 );
 
   std::vector< cv::Vec2f > lines;
 
@@ -49,13 +44,11 @@ int main( int argc, char* argv[] )
     double x0 = a*rho, y0 = b*rho;
     cv::Point pt1( cvRound(x0 + 1000*(-b)), cvRound(y0 + 1000*(a)));
     cv::Point pt2(cvRound( x0 - 1000*(-b)), cvRound(y0 - 1000*(a)));
-    cvLine( image, pt1, pt2, cv::Scalar(0,0,255), 3, 8 );
+    cv::line( image, pt1, pt2, cv::Scalar(0,0,255), 3, 8 );
     }
 
   cv::namedWindow( argv[1], CV_WINDOW_NORMAL );
-  cvShowImage( argv[1], image );
-
-  cvReleaseImage( &image );
+  cv::imshow( argv[1], image );
   cv::waitKey(0);
 
   return EXIT_SUCCESS;
