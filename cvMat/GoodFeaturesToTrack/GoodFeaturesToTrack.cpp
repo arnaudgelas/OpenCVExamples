@@ -11,12 +11,7 @@ int main( int argc, char* argv[] )
     return EXIT_FAILURE;
     }
 
-  IplImage* image = cvLoadImage( argv[1], CV_LOAD_IMAGE_GRAYSCALE );
-  if( !image )
-    {
-    std::cerr << "Could not load image file: " << argv[1] << std::endl;
-    return EXIT_FAILURE;
-    }
+  cv::Mat image = cv::imread( argv[1],0 );
 
   std::vector< cv::Point2f > corners;
 
@@ -56,13 +51,11 @@ int main( int argc, char* argv[] )
 
   for( size_t i = 0; i < corners.size(); i++ )
     {
-    cvCircle( image, corners[i], 10, cv::Scalar( 255. ), -1 );
+    cv::circle( image, corners[i], 10, cv::Scalar( 255. ), -1 );
     }
 
   cv::namedWindow( argv[1], CV_WINDOW_NORMAL );
-  cvShowImage( argv[1], image );
-
-  cvReleaseImage( &image );
+  cv::imshow( argv[1], image );
   cv::waitKey(0);
 
   return EXIT_SUCCESS;

@@ -18,16 +18,8 @@ int main( int argc, char* argv[] )
     return EXIT_FAILURE;
     }
 
-  std::vector< cv::Vec3f > circles;
   int method = CV_HOUGH_GRADIENT;
-  /*
-  double dp = 2.;
-  double minDist = 10.;
-  double param1=30.;
-  double param2=15.;
-  int minRadius = 5;
-  int maxRadius = 50;
-*/
+
 
   // The inverse ratio of the accumulator resolution to the image resolution.
   // For example, if dp=1 , the accumulator will have the same resolution as the
@@ -55,8 +47,10 @@ int main( int argc, char* argv[] )
 
   // Maximum circle radius
   int maxRadius = 100;
-  cv::HoughCircles( image, circles, method, dp, minDist, param1, param2,
-                minRadius, maxRadius );
+
+  CvMemStorage* storage = cvCreateMemStorage(0);
+
+  CvSeq* results = cvHoughCircles( image, storage, method, dp, minDist, param1, param2, minRadius, maxRadius );
 
   CvScalar color;
   color.val[0] = 255.;
@@ -65,16 +59,15 @@ int main( int argc, char* argv[] )
 
   size_t i = 1;
 
-  for( std::vector< cv::Vec3f >::const_iterator it = circles.begin();
-       it != circles.end();
-       ++it, ++i )
+  for( int i = 0; i < results->total; i++ )
     {
-      std::cout << "feature point " << i << std::endl;
-      std::cout << "position: [ " << ( *it )[0] << ", " << ( *it )[1] << "]" << std::endl;
-      std::cout << "radius: " << ( *it )[2] << std::endl;
-      std::cout << std::endl;
+    float* p = (float*) cvGetSeqElem( results, i );
+    std::cout << "feature point " << i << std::endl;
+    std::cout << "position: [ " << p[0] << ", " << p[1] << "]" << std::endl;
+    std::cout << "radius: " << p[2] << std::endl;
+    std::cout << std::endl;
 
-      cvCircle( image, cv::Point( ( *it )[0], ( *it )[1] ), (*it)[2], color, thickness );
+    cvCircle( image, cv::Point( p[0], p[1] ), p[2], color, thickness );
     }
 
   cv::namedWindow( argv[1], CV_WINDOW_NORMAL );
