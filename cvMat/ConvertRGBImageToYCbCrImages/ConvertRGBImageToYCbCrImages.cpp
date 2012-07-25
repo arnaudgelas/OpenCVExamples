@@ -23,7 +23,7 @@ int main( int argc, char* argv[] )
   cv::cvtColor( image, YCrCb, CV_BGR2YCrCb );
 
   std::vector<cv::Mat> YCrCb_planes;
-  cv::split( image, YCrCb_planes );
+  cv::split( YCrCb, YCrCb_planes );
   
   cv::imwrite( "Y.png", YCrCb_planes[0]);
   cv::imwrite( "Cr.png", YCrCb_planes[1]);
