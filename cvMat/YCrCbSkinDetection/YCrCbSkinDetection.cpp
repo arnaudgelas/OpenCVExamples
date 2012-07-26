@@ -43,12 +43,7 @@ int main( int argc, char* argv[] )
 	{
 		std::cerr << "Usage: " << argv[0] << " <InputImage>	<OutputImage>	" << std::endl;
 		std::cerr << "Options: " << std::endl;
-		std::cerr << "-YMin	<YMinThreshold>" << std::endl;
-		std::cerr << "-YMax	<YMaxThreshold>" << std::endl;
-		std::cerr << "-CrMin	<CrMinThreshold>" << std::endl;
-		std::cerr << "-CrMax	<CrMaxThreshold>" << std::endl;
-		std::cerr << "-CbMin	<CbMinThreshold>" << std::endl;
-		std::cerr << "-CbMax	<CbMaxThreshold>" << std::endl;
+		std::cerr << "<YMinThreshold>	<YMaxThreshold>	<CrMinThreshold>	<CrMaxThreshold>	<CbMinThreshold>	<CbMaxThreshold>" << std::endl;
 		return EXIT_FAILURE;
 	}
     
