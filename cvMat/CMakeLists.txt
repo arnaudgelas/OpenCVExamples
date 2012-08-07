@@ -18,4 +18,3 @@ add_subdirectory( ConvertIplToMat )
 add_subdirectory( YCrCbSkinDetection )
 add_subdirectory( CannyEdgeDetector )
 add_subdirectory( RotateAnImage )
-
