@@ -1,10 +1,10 @@
-project( Statistics )
-
-cmake_minimum_required( VERSION 2.8 )
-
-find_package( OpenCV REQUIRED )
-
-include_directories( ${OpenCV_INCLUDE_DIRS} )
-
-add_executable( Statistics Statistics.cpp )
-target_link_libraries( Statistics ${OpenCV_LIBS} )
+add_subdirectory( Median )
+add_subdirectory( Mean )
+add_subdirectory( Mode )
+add_subdirectory( StandardDeviation )
+add_subdirectory( Variance )
+add_subdirectory( Skewness )
+add_subdirectory( Kurtosis )
+add_subdirectory( Entropy )
+add_subdirectory( Min )
+add_subdirectory( Max )
