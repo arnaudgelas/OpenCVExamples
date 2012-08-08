@@ -16,6 +16,7 @@ add_subdirectory( STARFeatureDetection )
 add_subdirectory( SURFFeatureDetection )
 add_subdirectory( ConvertIplToMat )
 add_subdirectory( YCrCbSkinDetection )
+add_subdirectory( Statistics )
 add_subdirectory( CannyEdgeDetector )
 add_subdirectory( RotateAnImage )
 
